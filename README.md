@@ -25,7 +25,7 @@ npm run build
 npm start
 ```
 
-Open http://127.0.0.1:5190/ for the day tour or http://127.0.0.1:5190/night/ for the night game. Run all commands from the repository root; the root build packages both modes together. Rebuild after changing source files. The completed build works without internet access. Fonts, geometry, materials and sound generation are local.
+Open http://127.0.0.1:5190/ for the day tour or http://127.0.0.1:5190/night/ for the night game. Run all commands from the repository root; the root build packages both modes together. Rebuild after changing source files. The completed build works without internet access. Fonts, geometry, materials and sound generation are local. Starting the server before the build has finished fails with `Campus startup failed. Check the completed build and port configuration.`: `server.mjs` serves only the completed `dist/`, and it refuses to start unless both `dist/index.html` and `dist/night/index.html` exist. If you see that message, run `npm run build` again, then `npm start`.
 
 On Windows, after the first build you can also double-click **Start-GBU-Campus.cmd**. It uses the existing Codex Node runtime when available, otherwise Node from PATH, and opens the game.
 
